@@ -1,0 +1,67 @@
+#include "SLL.h"
+
+ void createList_1301213170(List &AP){
+    first(AP) = NULL;
+ }
+
+ adr newElement_1301213170(infotype x){
+    adr P = new element;
+    info(P) = x;
+    next(P) = NULL;
+    return P;
+ }
+
+ void insertFirst_1301213170(List &AP, adr P){
+    if (first(AP)== NULL){
+        first(AP) = P;
+    }else{
+        next(P) = first(AP);
+        first(AP) = P;
+    }
+ }
+
+ void Show_1301213170(List AP){
+    if(first(AP) != NULL){
+        adr P = first(AP);
+        while(P != NULL){
+            cout<< info(P)<<",";
+            P = next(P);
+        }
+    }else{
+        cout<<"List Kosong"<<endl;
+    }
+ }
+
+ adr deleteLast_1301213170(List &AP){
+     adr P,Q;
+    if (first(AP) == NULL){
+        P = NULL;
+        cout<< "List Kosong"<<endl;
+    }else if(next(first(AP)) == NULL){
+        P = first(AP);
+        first(AP) = NULL;
+    }else{
+        Q = first(AP);
+        P = first(AP);
+        while (next(P) != NULL){
+            Q = P;
+            P = next(P);
+        }
+        next(Q) = NULL;
+    }
+    return P;
+ }
+
+ adr deleteFirst_1301213170(List &AP){
+    adr P;
+    if (first(AP) == NULL){
+        P = NULL;
+        cout<< "List Kosong"<< endl;
+    }else if (next(first(AP))== NULL){
+        first(AP) = NULL;
+    }else{
+        first(AP) = next(first(AP));
+
+    }
+    return P;
+ }
